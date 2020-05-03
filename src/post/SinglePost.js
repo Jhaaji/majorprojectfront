@@ -123,21 +123,21 @@ class SinglePost extends Component {
                 <p className="card-text">{post.body}</p>
                 <br />
                 <p className="font-italic mark">
-                    Posted by <Link to={`${posterId}`}>{posterName} </Link>
+                    Raised by <Link to={`${posterId}`}>{posterName} </Link>
                     on {new Date(post.created).toDateString()}
                 </p>
                 <div className="d-inline-block">
                     <Link to={`/`} className="btn btn-raised btn-primary btn-sm mr-5">
-                        Back to posts
+                        Back to Complaints
                     </Link>
 
                     {isAuthenticated().user && isAuthenticated().user._id === post.postedBy._id && (
                         <>
                             <Link to={`/post/edit/${post._id}`} className="btn btn-raised btn-warning btn-sm mr-5">
-                                Update Post
+                                Update Complaint
                             </Link>
                             <button onClick={this.deleteConfirmed} className="btn btn-raised btn-danger">
-                                Delete Post
+                                Delete Complaint
                             </button>
                         </>
                     )}
@@ -152,10 +152,10 @@ class SinglePost extends Component {
                                         to={`/post/edit/${post._id}`}
                                         className="btn btn-raised btn-warning btn-sm mr-5"
                                     >
-                                        Update Post
+                                        Update Complaint
                                     </Link>
                                     <button onClick={this.deleteConfirmed} className="btn btn-raised btn-danger">
-                                        Delete Post
+                                        Delete Complaint
                                     </button>
                                 </div>
                             </div>

@@ -115,7 +115,7 @@ class Profile extends Component {
                   className="btn btn-raised btn-info mr-5"
                   to={`/post/create`}
                 >
-                  Create Post
+                  Raise Complaint
                 </Link>
 
                 <Link

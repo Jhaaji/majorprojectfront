@@ -48,7 +48,7 @@ class Posts extends Component {
                         : " Unknown";
 
                     return (
-                        <div className="card col-md-4" key={i}>
+                        <div className="col-md-12" key={i}>
                             <div className="card-body">
                                 <img
                                     src={`${
@@ -58,7 +58,7 @@ class Posts extends Component {
                                     onError={i =>
                                         (i.target.src = `${DefaultPost}`)
                                     }
-                                    className="img-thunbnail mb-3"
+                                    className="img-thunbnail mb-5"
                                     style={{ height: "200px", width: "100%" }}
                                 />
                                 <h5 className="card-title">{post.title}</h5>
@@ -67,7 +67,7 @@ class Posts extends Component {
                                 </p>
                                 <br />
                                 <p className="font-italic mark">
-                                    Posted by{" "}
+                                    Raised by{" "}
                                     <Link to={`${posterId}`}>
                                         {posterName}{" "}
                                     </Link>
@@ -92,7 +92,7 @@ class Posts extends Component {
         return (
             <div className="container">
                 <h2 className="mt-5 mb-5">
-                    {!posts.length ? "No more posts!" : "Recent Posts"}
+                    {!posts.length ? "No more complaints!" : "Recent Complaints"}
                 </h2>
 
                 {this.renderPosts(posts)}

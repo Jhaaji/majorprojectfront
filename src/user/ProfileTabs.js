@@ -81,7 +81,7 @@ class ProfileTabs extends Component {
                     </div>
 
                     <div className="col-md-4">
-                        <h3 className="text-primary">{posts.length} Posts</h3>
+                        <h3 className="text-primary">{posts.length} Complaints</h3>
                         <hr />
                         {posts.map((post, i) => (
                             <div key={i}>

@@ -27,7 +27,7 @@ const Menu = ({ history }) => (
 
             <li className="nav-item">
                 <Link to={`/post/create`} style={isActive(history, `/post/create`)} className="nav-link">
-                    Create Post
+                    Raise complaint
                 </Link>
             </li>
 

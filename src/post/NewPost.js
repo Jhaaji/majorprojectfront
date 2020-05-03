@@ -3,6 +3,8 @@ import { isAuthenticated } from "../auth";
 import { create } from "./apiPost";
 import { Redirect } from "react-router-dom";
 
+
+
 class NewPost extends Component {
     constructor() {
         super();
@@ -10,6 +12,8 @@ class NewPost extends Component {
             title: "",
             body: "",
             photo: "",
+            area: "",
+            category: "",
             error: "",
             user: {},
             fileSize: 0,
@@ -91,6 +95,25 @@ class NewPost extends Component {
                     value={title}
                 />
             </div>
+            <div className="form-group">
+                <label className="text-muted">Area</label>
+                <input
+                    onChange={this.handleChange("area")}
+                    type="text"
+                    className="form-control"
+                    placeholder=""
+                />
+            </div>
+            <div className="form-group"> 
+            <label className="text-muted">Select the category :</label>
+             <select className="browser-default custom-select ">
+
+          
+          <option value="1">Electricity</option>
+          <option value="2">Water</option>
+          <option value="3">Others</option>
+        </select>
+      </div>
 
             <div className="form-group">
                 <label className="text-muted">Body</label>
@@ -128,7 +151,7 @@ class NewPost extends Component {
 
         return (
             <div className="container">
-                <h2 className="mt-5 mb-5">Create a new post</h2>
+                <h2 className="mt-5 mb-5">Raise a new Complaint</h2>
                 <div
                     className="alert alert-danger"
                     style={{ display: error ? "" : "none" }}
