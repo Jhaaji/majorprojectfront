@@ -68,6 +68,8 @@ class NewPost extends Component {
                         loading: false,
                         title: "",
                         body: "",
+                        area: "",
+                        category: "",
                         redirectToProfile: true
                     });
                 }
@@ -75,7 +77,7 @@ class NewPost extends Component {
         }
     };
 
-    newPostForm = (title, body) => (
+    newPostForm = (title, body, area, category) => (
         <form>
             <div className="form-group">
                 <label className="text-muted">Post Photo</label>
@@ -101,17 +103,26 @@ class NewPost extends Component {
                     onChange={this.handleChange("area")}
                     type="text"
                     className="form-control"
+                    value={area}
                     placeholder=""
                 />
             </div>
             <div className="form-group"> 
             <label className="text-muted">Select the category :</label>
-             <select className="browser-default custom-select ">
+             <select 
+                    className="browser-default custom-select "
+                    onChange={this.handleChange("category")}
+                    ref={ref => {
+                         this._select = ref
+                         }}
+                    value={this.state.value}
+                     
+            >
 
-          
-          <option value="1">Electricity</option>
-          <option value="2">Water</option>
-          <option value="3">Others</option>
+
+                  <option value="Electricity">Electricity</option>
+                  <option value="Water">Water</option>
+                  <option value="Others">Others</option>
         </select>
       </div>
 
@@ -138,6 +149,8 @@ class NewPost extends Component {
         const {
             title,
             body,
+            area,
+            category,
             photo,
             user,
             error,
@@ -167,7 +180,7 @@ class NewPost extends Component {
                     ""
                 )}
 
-                {this.newPostForm(title, body)}
+                {this.newPostForm(title, body, area, category)}
             </div>
         );
     }

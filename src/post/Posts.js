@@ -48,7 +48,7 @@ class Posts extends Component {
                         : " Unknown";
 
                     return (
-                        <div className="col-md-12" key={i}>
+                        <div className="col-md-4" key={i}>
                             <div className="card-body">
                                 <img
                                     src={`${
@@ -61,11 +61,31 @@ class Posts extends Component {
                                     className="img-thunbnail mb-5"
                                     style={{ height: "200px", width: "100%" }}
                                 />
+                               
                                 <h5 className="card-title">{post.title}</h5>
+                                 Category :
+                                  <span 
+                                        className="danger"
+                                        style={{
+                                            backgroundColor: 'lightcyan'
+                                          }}
+                                    >
+                                        {post.category}
+                                    </span><br />
+                                     Area :
+                                  <span 
+                                        className="danger"
+                                        style={{
+                                            backgroundColor: 'lightcyan'
+                                          }}
+                                    >
+                                        {post.area}
+                                    </span>
+                                    <br /><br /> 
                                 <p className="card-text">
                                     {post.body.substring(0, 100)}
                                 </p>
-                                <br />
+                                
                                 <p className="font-italic mark">
                                     Raised by{" "}
                                     <Link to={`${posterId}`}>

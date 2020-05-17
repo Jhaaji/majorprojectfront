@@ -11,6 +11,8 @@ class EditPost extends Component {
             id: "",
             title: "",
             body: "",
+            area: "",
+            category: "",
             redirectToProfile: false,
             error: "",
             fileSize: 0,
@@ -27,6 +29,8 @@ class EditPost extends Component {
                     id: data.postedBy._id,
                     title: data.title,
                     body: data.body,
+                    area: data.area,
+                    category: data.category,
                     error: ""
                 });
             }
@@ -80,6 +84,8 @@ class EditPost extends Component {
                         loading: false,
                         title: "",
                         body: "",
+                        area: "",
+                        category: "",
                         redirectToProfile: true
                     });
                 }
@@ -87,7 +93,7 @@ class EditPost extends Component {
         }
     };
 
-    editPostForm = (title, body) => (
+    editPostForm = (title, body, area, category) => (
         <form>
             <div className="form-group">
                 <label className="text-muted">Post Photo</label>
@@ -107,6 +113,34 @@ class EditPost extends Component {
                     value={title}
                 />
             </div>
+            <div className="form-group">
+                <label className="text-muted">Area</label>
+                <input
+                    onChange={this.handleChange("area")}
+                    type="text"
+                    className="form-control"
+                    value={area}
+                    placeholder=""
+                />
+            </div>
+            <div className="form-group"> 
+            <label className="text-muted">Select the category :</label>
+             <select 
+                    className="browser-default custom-select "
+                    onChange={this.handleChange("category")}
+                    ref={ref => {
+                         this._select = ref
+                         }}
+                    value={this.state.value}
+                     
+            >
+
+
+                  <option value="Electricity">Electricity</option>
+                  <option value="Water">Water</option>
+                  <option value="Others">Others</option>
+        </select>
+      </div>
 
             <div className="form-group">
                 <label className="text-muted">Body</label>
@@ -132,6 +166,8 @@ class EditPost extends Component {
             id,
             title,
             body,
+            area,
+            category,
             redirectToProfile,
             error,
             loading
