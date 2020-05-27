@@ -15,7 +15,11 @@ const Menu = ({ history }) => (
                     Home
                 </Link>
             </li>
-
+            <li className="nav-item">
+                <Link to="/urgent" className="nav-link" style={isActive(history, '/')}>
+                    Urgent
+                </Link>
+            </li>
             <li className="nav-item">
                 <Link
                     className={history.location.pathname === '/users' ? 'active nav-link' : 'not-active nav-link'}
@@ -30,6 +34,7 @@ const Menu = ({ history }) => (
                     Raise complaint
                 </Link>
             </li>
+
 
             {!isAuthenticated() && (
                 <React.Fragment>

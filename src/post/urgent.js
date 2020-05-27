@@ -3,7 +3,7 @@ import { list } from "./apiPost";
 import DefaultPost from "../images/mountains.jpg";
 import { Link } from "react-router-dom";
 
-class Posts extends Component {
+class Urgent extends Component {
     constructor() {
         super();
         this.state = {
@@ -43,10 +43,11 @@ class Posts extends Component {
                     const posterId = post.postedBy
                         ? `/user/${post.postedBy._id}`
                         : "";
+                        const j=0;
                     const posterName = post.postedBy
                         ? post.postedBy.name
                         : " Unknown";
-                     
+                        if(post.area=='Tumkur'||post.area=='Bengaluru'){
                     return (
                         
                         <div className="col-md-4" key={i}>
@@ -104,7 +105,7 @@ class Posts extends Component {
                         </div>
 
                     );
-                    
+                    }
                 })}
             </div>
         );
@@ -115,7 +116,7 @@ class Posts extends Component {
         return (
             <div className="container">
                 <h2 className="mt-5 mb-5">
-                    {!posts.length ? "No more complaints!" : "Recent Complaints"}
+                    {!posts.length ? "No more complaints!" : "Urgent Complaints"}
                 </h2>
 
                 {this.renderPosts(posts)}
@@ -131,19 +132,10 @@ class Posts extends Component {
                     ""
                 )}
 
-                {posts.length ? (
-                    <button
-                        className="btn btn-raised btn-success mt-5 mb-5"
-                        onClick={() => this.loadMore(1)}
-                    >
-                        Next ({page + 1})
-                    </button>
-                ) : (
-                    ""
-                )}
+                
             </div>
         );
     }
 }
 
-export default Posts;
+export default Urgent;

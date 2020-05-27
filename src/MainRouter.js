@@ -16,6 +16,7 @@ import ForgotPassword from "./user/ForgotPassword";
 import ResetPassword from "./user/ResetPassword";
 import Admin from "./admin/Admin";
 import complaint_type from "./core/complaint_type";
+import Urgent from "./post/urgent"
 
 const MainRouter = () => (
     <div align="centre">
@@ -24,6 +25,7 @@ const MainRouter = () => (
         <Switch>
     
             <Route exact path="/" component={Home} />
+            <Route exact path="/urgent" component={Urgent} />
             <PrivateRoute exact path="/admin" component={Admin} />
             <Route exact path="/forgot-password" component={ForgotPassword} />
             <Route
